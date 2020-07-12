@@ -13,5 +13,4 @@ class Solution(object):
         return s + 1
 
 
-s = Solution()
-print(s.removeDuplicates([1, 2, 3, 3, 3]))
+print(Solution().removeDuplicates([1, 2, 3, 3, 3]))
