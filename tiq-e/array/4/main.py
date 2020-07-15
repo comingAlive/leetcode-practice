@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         s = set(nums)
-        return len(nums) != len(s)
+        return len(s) != len(nums)
 
 
 arr = [1, 2, 3, 4, 5]

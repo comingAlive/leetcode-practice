@@ -1,15 +1,14 @@
-function rotate(nums: number[], k: number): void {
-  nums.unshift(...nums.splice(nums.length - k % nums.length));
+import {performance} from 'perf_hooks';
+
+function containsDuplicate(nums: number[]): boolean {
+  let set = new Set(nums);
+  return set.size !== nums.length;
 }
 
-let x = [1, 2, 3, 4, 5, 6, 7]
-rotate(x, 3)
-console.log(x)
+let arr = [1, 2, 3, 3];
 
-const iterations = 1000000;
-console.time('Function #1');
-for (let i = 0; i < iterations; i++) {
-  rotate(x, 3);
-}
-console.timeEnd('Function #1')
-
+let start = performance.now();
+let result = containsDuplicate(arr);
+let end = performance.now();
+console.log('Duration:', end - start);
+console.log('Result:', result)
