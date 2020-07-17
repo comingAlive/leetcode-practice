@@ -10,12 +10,11 @@ function intersect(nums1: number[], nums2: number[]): number[] {
     }
   }
   const result = [];
-  for (const n of nums2) {
+  for (const n of nums2)
     if (map.has(n) && map.get(n) > 0) {
       result.push(n);
       map.set(n, map.get(n) - 1);
     }
-  }
   return result;
 }
 
