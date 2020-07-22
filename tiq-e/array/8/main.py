@@ -17,7 +17,7 @@ class Solution:
 arr = [0, 1, 0, 3, 12]
 
 start = perf_counter()
-result = Solution().moveZeroes(arr)
+Solution().moveZeroes(arr)
 end = perf_counter()
 print("Duration: " + str(end - start))
 print("Result: " + str(arr))

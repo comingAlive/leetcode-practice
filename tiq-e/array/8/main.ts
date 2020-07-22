@@ -13,7 +13,7 @@ function moveZeroes(nums: number[]): void {
 let arr = [0, 1, 0, 3, 12];
 
 let start = performance.now();
-let result = moveZeroes(arr);
+moveZeroes(arr);
 let end = performance.now();
 console.log('Duration:', end - start);
 console.log('Result:', arr)

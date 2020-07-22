@@ -18,7 +18,7 @@ fn main() {
     let mut arr = Vec::from([0, 1, 0, 3, 12]);
 
     let start = Instant::now();
-    let result = Solution::move_zeroes(&mut arr);
+    Solution::move_zeroes(&mut arr);
     let end = start.elapsed().as_micros();
     println!("Duration: {:?}", end);
     println!("Result: {:?}", arr);
