@@ -6,18 +6,27 @@ import (
 )
 
 func isValidSudoku(board [][]byte) bool {
-	var row, col, block [300][300]bool
-	for i := range board {
-		for j, c := range board[i] {
-			if c == '.' {
-				continue
+	vrow := make(map[int]map[byte]bool)
+	vcol := make(map[int]map[byte]bool)
+	for box := 0; box < len(board); box++ {
+		vcube := make(map[byte]bool)
+		for i := box / 3 * 3; i < box/3*3+3; i++ {
+			for j := box % 3 * 3; j < box%3*3+3; j++ {
+				val := board[i][j]
+				if val == '.' {
+					continue
+				}
+				if vcube[val] || vrow[i][val] || vcol[j][val] {
+					return false
+				}
+				if vrow[i] == nil {
+					vrow[i] = make(map[byte]bool)
+				}
+				if vcol[j] == nil {
+					vcol[j] = make(map[byte]bool)
+				}
+				vrow[i][val], vcol[j][val], vcube[val] = true, true, true
 			}
-			if col[j][c-'0'] || row[i][c-'0'] || block[i/3+j/3*3][c-'0'] {
-				return false
-			}
-			col[j][c-'0'] = true
-			row[i][c-'0'] = true
-			block[i/3+j/3*3][c-'0'] = true
 		}
 	}
 	return true
