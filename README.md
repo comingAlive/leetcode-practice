@@ -12,7 +12,7 @@
 
 ~~Array 11/11~~
 
-Strings 1/9
+Strings 2/9
 
 Linked Lists
 
