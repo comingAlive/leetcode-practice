@@ -1,3 +1,12 @@
+package main
+
+import (
+	"fmt"
+	"regexp"
+	"strings"
+	"time"
+)
+
 func isPalindrome(s string) bool {
 	var reg, _ = regexp.Compile("[^a-z0-9]+")
 	s = reg.ReplaceAllString(strings.ToLower(s), "")
@@ -12,4 +21,14 @@ func isPalindrome(s string) bool {
 		c2--
 	}
 	return true
+}
+
+func main() {
+	s := "aba"
+
+	var start = time.Now()
+	var result = isPalindrome(s)
+	var end = time.Since(start)
+	fmt.Println("Duration: ", end)
+	fmt.Println("Result: ", result)
 }
