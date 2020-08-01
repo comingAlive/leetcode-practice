@@ -5,7 +5,7 @@ struct Solution;
 impl Solution {
     pub fn count_and_say(n: i32) -> String {
         if n == 1 {
-            return "1".to_string();
+            return "1";
         };
         let prev_res = Self::count_and_say(n - 1).chars().collect::<Vec<char>>();
         let mut res = vec![];
