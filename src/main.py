@@ -1,27 +1,25 @@
 from time import perf_counter
+from typing import List
 
 
 class Solution:
-    def countAndSay(self, n: int) -> str:
-        str_ = '1'
-        for i in range(2, n + 1):
-            temp = ''
-            count = 1
-            for j in range(1, len(str_)):
-                if str_[j - 1] != str_[j]:
-                    temp += str(count) + str_[j - 1]
-                    count = 1
-                else:
-                    count += 1
-            temp += str(count) + str_[-1]
-            str_ = temp
-        return str_
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) < 2:
+            return len(nums)
+
+        u = 0
+        for num in nums[1:]:
+            if num != nums[u]:
+                u += 1
+                nums[u] = num
+
+        return u + 1
 
 
-n = 4
+nums = [1, 1, 2]
 
 start = perf_counter()
-result = Solution().countAndSay(n)
+result = Solution().removeDuplicates(nums)
 end = perf_counter()
 print("Duration: " + str(end - start))
 print("Result: " + str(result))

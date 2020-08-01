@@ -5,39 +5,27 @@ import (
 	"time"
 )
 
-func countAndSay(n int) string {
-	if n == 1 {
-		return "1"
+func removeDuplicates(nums []int) int {
+	if len(nums) < 2 {
+		return len(nums)
 	}
-	if n == 2 {
-		return "11"
-	}
-	prev := []byte{'1', '1'}
-	for i := 2; i < n; i++ {
-		var temp []byte
-		count := 1
-		for j := 1; j < len(prev); j++ {
-			if prev[j] == prev[j-1] {
-				count++
-			} else {
-				temp = append(temp, byte(count+'0'), prev[j-1])
-				count = 1
-			}
-			if j == len(prev)-1 {
-				temp = append(temp, byte(count+'0'), prev[j])
-				count = 0
-			}
+
+	u := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i-1] != nums[i] {
+			nums[u] = nums[i]
+			u++
 		}
-		prev = temp
 	}
-	return string(prev)
+
+	return u
 }
 
 func main() {
-	var n = 4
+	var nums = []int{1, 1, 2}
 
 	var start = time.Now()
-	var result = countAndSay(n)
+	var result = removeDuplicates(nums)
 	var end = time.Since(start)
 	fmt.Println("Duration: ", end)
 	fmt.Println("Result: ", result)

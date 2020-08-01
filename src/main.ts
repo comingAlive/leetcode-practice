@@ -1,30 +1,25 @@
 import { performance } from "perf_hooks";
 
-function countAndSay(n: number): string {
-  let str = "1";
-  while (n > 1) {
-    let newStr = "",
-      count = 0,
-      say = str[0];
-    for (let i = 0; i < str.length; i += 1) {
-      if (str[i] === say) {
-        count += 1;
-      } else {
-        newStr += count + say;
-        count = 1;
-        say = str[i];
-      }
-    }
-    str = newStr + count + say;
-    n -= 1;
+function removeDuplicates(nums: number[]): number {
+  if (nums.length < 2) {
+    return nums.length;
   }
-  return str;
+
+  let u = 0;
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[u]) {
+      u += 1;
+      [nums[u], nums[i]] = [nums[i], nums[u]];
+    }
+  }
+
+  return u + 1;
 }
 
-const n = 4;
+const nums = [1, 1, 2];
 
 const start = performance.now();
-const result = countAndSay(n);
+const result = removeDuplicates(nums);
 const end = performance.now();
 console.log("Duration:", end - start);
 console.log("Result:", result);

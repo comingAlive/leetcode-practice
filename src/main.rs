@@ -3,33 +3,28 @@ use std::time::Instant;
 struct Solution;
 
 impl Solution {
-    pub fn count_and_say(n: i32) -> String {
-        if n == 1 {
-            return "1".to_string();
-        };
-        let prev_res = Self::count_and_say(n - 1).chars().collect::<Vec<char>>();
-        let mut res = vec![];
-        let mut prev_chr = &prev_res[0];
-        let mut count = 1;
-        for chr in &prev_res[1..] {
-            if chr == prev_chr {
-                count += 1;
-            } else {
-                res.push(format!("{}{}", count, prev_chr));
-                count = 1;
-            }
-            prev_chr = chr;
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        if nums.len() < 2 {
+            return nums.len() as i32;
         }
-        res.push(format!("{}{}", count, prev_chr));
-        res.join("")
+
+        let mut u = 0;
+        for i in 1..nums.len() {
+            if nums[i] != nums[u] {
+                u += 1;
+                nums[u] = nums[i]
+            }
+        }
+
+        return (u + 1) as i32;
     }
 }
 
 fn main() {
-    let n = 4;
+    let mut nums: Vec<i32> = Vec::from([1, 1, 2]);
 
     let start = Instant::now();
-    let result = Solution::count_and_say(n);
+    let result = Solution::remove_duplicates(&mut nums);
     let end = start.elapsed().as_micros();
     println!("Duration: {:?}", end);
     println!("Result: {:?}", result);
