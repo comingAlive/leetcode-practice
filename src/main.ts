@@ -1,4 +1,4 @@
-import { performance } from "perf_hooks";
+import {performance} from "perf_hooks";
 
 function removeDuplicates(nums: number[]): number {
   if (nums.length < 2) {
@@ -9,11 +9,11 @@ function removeDuplicates(nums: number[]): number {
   for (let i = 1; i < nums.length; i++) {
     if (nums[i] !== nums[u]) {
       u += 1;
-      [nums[u], nums[i]] = [nums[i], nums[u]];
+      nums[u] = nums[i]
     }
   }
 
-  return u + 1;
+  return u + 1
 }
 
 const nums = [1, 1, 2];
