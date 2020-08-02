@@ -1,14 +1,22 @@
+from time import perf_counter
 from typing import List
 
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        maxprofit = 0
-        if not prices: return 0
-        for i in range(len(prices) - 1):
-            if prices[i] < prices[i + 1]:
-                maxprofit += prices[i + 1] - prices[i]
-        return maxprofit
+        profit = 0
+
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i - 1]:
+                profit += prices[i] - prices[i - 1]
+
+        return profit
 
 
-print(Solution().maxProfit([7, 1, 5, 3, 6, 4]))
+prices = [7, 1, 5, 3, 6, 4]
+
+start = perf_counter()
+result = Solution().maxProfit(prices)
+end = perf_counter()
+print("Duration: " + str(end - start))
+print("Result: " + str(result))
