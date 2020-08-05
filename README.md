@@ -16,7 +16,7 @@
 
 Linked Lists
 
-Trees 2/5
+Trees 3/5
 
 Sorting and Searching
 
