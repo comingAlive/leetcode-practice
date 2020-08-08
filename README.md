@@ -14,7 +14,7 @@
 
 ~~Strings 9/9~~
 
-Linked Lists
+Linked Lists 1/6
 
 ~~Trees 5/5~~
 
