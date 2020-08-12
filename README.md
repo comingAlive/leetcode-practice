@@ -18,7 +18,7 @@ Linked Lists 4/6
 
 ~~Trees 5/5~~
 
-Sorting and Searching
+Sorting and Searching 1/2
 
 Dynamic Programming
 
