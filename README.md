@@ -20,7 +20,7 @@ Linked Lists 4/6
 
 Sorting and Searching 1/2
 
-Dynamic Programming 3/4
+~~Dynamic Programming 4/4~~
 
 Design
 
