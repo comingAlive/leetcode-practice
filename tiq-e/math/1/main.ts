@@ -1,19 +1,18 @@
 import {performance} from "perf_hooks";
 
 function fizzBuzz(n: number): string[] {
-    let result = [];
-    for (let i = 1; i < n + 1; i++) {
-        if (!(i % 3) && !(i % 5)) {
-            result.push('FizzBuzz')
-        } else if (!(i % 3)) {
-            result.push('Fizz')
-        } else if (!(i % 5)) {
-            result.push('Buzz')
+    return Array.from({length: n}, (v, k) => {
+        const value = k + 1
+        if (value % 15 === 0) {
+            return "FizzBuzz"
+        } else if (value % 3 === 0) {
+            return "Fizz"
+        } else if (value % 5 === 0) {
+            return "Buzz"
         } else {
-            result.push(i.toString())
+            return value.toString()
         }
-    }
-    return result
+    })
 };
 
 const n = 15;

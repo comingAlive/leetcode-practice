@@ -7,21 +7,20 @@ import (
 )
 
 func fizzBuzz(n int) []string {
-	ss := []string{}
-	for i := 1; i <= n; i++ {
-		s := ""
-		if i%3 == 0 {
-			s += "Fizz"
+	arr := make([]string, n)
+	for i := 0; i < len(arr); i++ {
+		val := i + 1
+		strVal := strconv.Itoa(val)
+		if val%15 == 0 {
+			strVal = "FizzBuzz"
+		} else if val%3 == 0 {
+			strVal = "Fizz"
+		} else if val%5 == 0 {
+			strVal = "Buzz"
 		}
-		if i%5 == 0 {
-			s += "Buzz"
-		}
-		if s == "" {
-			s = strconv.Itoa(i)
-		}
-		ss = append(ss, s)
+		arr[i] = strVal
 	}
-	return ss
+	return arr
 }
 
 func main() {
