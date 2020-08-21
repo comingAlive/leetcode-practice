@@ -24,7 +24,7 @@ Sorting and Searching 1/2
 
 Design 1/2
 
-Math 3/4
+~~Math 4/4~~
 
 Others
 
