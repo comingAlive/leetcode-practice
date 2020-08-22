@@ -26,7 +26,7 @@ Design 1/2
 
 ~~Math 4/4~~
 
-Others
+Others 1/6
 
 ---
 
