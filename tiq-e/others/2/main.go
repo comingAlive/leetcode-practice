@@ -17,7 +17,7 @@ func hammingDistance(x int, y int) int {
 }
 
 func main() {
-	x := 1
+	x := 2
 	y := 4
 
 	start := time.Now()

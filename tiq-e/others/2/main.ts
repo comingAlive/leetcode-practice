@@ -14,7 +14,7 @@ function hammingDistance(x: number, y: number): number {
     return ans
 }
 
-const x = 1;
+const x = 2;
 const y = 4;
 
 const start = performance.now();
