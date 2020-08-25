@@ -1,4 +1,4 @@
-# HackerRank Practice Progress
+# LeetCode Practice Progress
 
 ---
 
@@ -26,7 +26,7 @@ Design 1/2
 
 ~~Math 4/4~~
 
- Others 3/6
+ Others 4/6
 
 ---
 
