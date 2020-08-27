@@ -26,7 +26,7 @@ Sorting and Searching 1/2
 
 ~~Math 4/4~~
 
- Others 4/6
+ Others 5/6
 
 ---
 
